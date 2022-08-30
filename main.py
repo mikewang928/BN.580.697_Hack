@@ -56,10 +56,6 @@ def building_net(N,K,C,rank):
     #print(supplies)
     return start_nodes,end_nodes,capacities,unit_costs,supplies
 
-def hand_min_cost_max_flow(N,start_nodes,end_nodes,capacities,unit_costs,supplies):
-    #Dijkstra+EK
-
-
 
 def min_cost_maximum_flow(N,start_nodes,end_nodes,capacities,unit_costs,supplies):
     min_cost_flow = pywrapgraph.SimpleMinCostFlow()
