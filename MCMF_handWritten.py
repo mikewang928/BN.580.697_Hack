@@ -1,3 +1,11 @@
+'''
+created by Erx
+no package at all :)
+using EK+SPFA to find the minimum cost maximum flow
+input: follow the hint and input your number / array of numbers (separated by space)
+output: words about the assignment arrangements
+'''
+
 class Graph:
     def __init__(self,points):
         self.costTab={}        #table of costs
