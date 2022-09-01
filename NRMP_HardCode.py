@@ -24,17 +24,14 @@ import numpy as np
 
 # define constants 
 
-num_doctor = 5
-num_Hospital = 2
+num_doctor = 10
+num_Hospital = 4
 Hospital_cap = math.ceil(num_doctor/num_Hospital)
-Doctor_Rank = [[1,2],[2,1],[1,2],[2,1],[1,2]]
-Hospital_Rank = [[1,2,3,4,5],[2,1,4,3,5]]
+Doctor_Rank = [[1,2,3,4],[3,2,1,4],[4,1,3,2],[3,2,4,1],[3,1,4,2],[3,1,2,4],[4,3,2,1],[3,2,1,4],[2,1,3,4],[1,3,4,2]]
+Hospital_Rank = [[1,2,3,4,5,6,7,8,9,10],[2,1,4,3,5,10,9,6,8,7],[6,2,1,3,5,4,7,10,9,8],[5,4,3,2,1,10,9,8,7,6]]
 Doctor_is_occupied_list = [False]*num_doctor
 
-Hospital_target_list = [[] for _ in range(num_Hospital)]
-
-Hospital_target_list[1] = [1,2,3,5]
-
+Hospital_target_list = [[] for _ in range(num_Hospital)] 
 '''
 input: 
     Doctor_Id: the doctor id of the new coming doctor 
@@ -84,9 +81,6 @@ def higher_ranker_check(Doctor_Id, Hospital_Id):
             return -2 # -2 indicates that the exisitng doctors in the hospital target list all rank higher than the new coming doctor
 
 
-
-
-
 def input_Doctor_preference_list(N):
     rank=[[]]*N
     #rank: list of lists, every list's order represent a patient's prefered doctor's number.
@@ -107,6 +101,25 @@ def input_Hospital_preference_list(N):
         rank[i]=input_string.split()
         rank[i]=[int(ele) for ele in rank[i]]
     return rank
+
+
+
+
+while all(Doctor_is_occupied_list) == False:
+    for i in range(num_doctor):
+        if Doctor_is_occupied_list[i] == False:
+            Doctor_Id = i+1
+            Doctor_Hospital_choice = Doctor_Rank[i][0]
+            status = higher_ranker_check(Doctor_Id, Doctor_Hospital_choice)
+            del Doctor_Rank[i][0] # remove it's perfernece once submitted
+            # if the submission is rejected by the hosipital and the doctor still has a perfernece, try the next perference hoispital
+            while status == -2 and len(Doctor_Rank[i]) !=0: 
+                Doctor_Hospital_choice = Doctor_Rank[i][0]
+                status = higher_ranker_check(Doctor_Id, Doctor_Hospital_choice)
+                del Doctor_Rank[i][0] #remove it's perfernece once submitted
+            if status == -2 and len(Doctor_Rank[i])==0:
+                Doctor_is_occupied_list[i] = None
+
 
 # if __name__ == '__main__':
 #     N_Doctor =int(input("Number of Doctors:"))
