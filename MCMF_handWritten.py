@@ -3,7 +3,7 @@ created by Erx
 no package at all :)
 using EK+SPFA to find the minimum cost maximum flow
 input: follow the hint and input your number / array of numbers (separated by space)
-output: words about the assignment arrangements
+output: a chart about the assignment arrangements
 '''
 
 class Graph:
@@ -27,13 +27,13 @@ class Graph:
     def costFlow(self,s,t):
         path=self.SPFA(s,t)
         while path:
-            print(" \n\nthe shortest path:",path)
+            #print(" \n\nthe shortest path:",path)
             minFlow=self.findMinFlow(path,s,t)
-            print("the bottleneck: ",minFlow)
+            #print("the bottleneck: ",minFlow)
             self.changeFlow(minFlow,path,s,t)
             path=self.SPFA(s,t)
         return self.backPath
-#'''
+
     def SPFA(self,s,t):
         que=[]          #spfa's que
         path=[0]*self.len          #record the shortest path
@@ -74,10 +74,10 @@ class Graph:
 
     def changeFlow(self,minFlow,path,s,t):
         pathNow = t
-        print("backwards change flow path:",pathNow,end="")
+        #print("backwards change flow path:",pathNow,end="")
         while pathNow != s:
             pathPre = path[pathNow]
-            print("->",pathPre,end="")
+            #print("->",pathPre,end="")
             self.resCap[pathPre][pathNow]-=minFlow
             if pathNow not in self.backPath:
                 self.backPath[pathNow] = {}
@@ -85,8 +85,6 @@ class Graph:
                 self.backPath[pathNow][pathPre] = 0
             self.backPath[pathNow][pathPre]+=minFlow
             pathNow = pathPre
-#'''
-
 
 def input_patient_preference_list(N):
     rank=[[]]*N
@@ -119,18 +117,18 @@ if __name__ == '__main__':
     for i in range(K):
         G.addEdge(i+N+1,N+K+1,C[i],0)            #from doctor to terminal: capacity (doc_cap), cost 0
 
-    #print(G.capTab)
-    #print(G.costTab)
-    #print(G.resCap[0])
-
     s=0;t=N+K+1
     outputTab=G.costFlow(s,t)
-    print("\n",outputTab)
-    sorted(outputTab)
+
+    title="\nAssignments:\n    Doctor"+" "*8+"Patient(s)    "
+    print(title)
+    print("-"*(len(title)-len("\nAssignments:\n)")),end="")
     for p,linkage in outputTab.items():
         if (p>N)&(p<N+K+1):
-            print("\nDoctor No.%d"%(p-N),"will take in Patient ",end="")
+            print("\n     No.%d         "%(p-N),end="")
+            #print("\nDoctor No.%d"%(p-N),"will take in Patient ",end="")
             for patient,choice in linkage.items():
-                print("No. %d  "%(patient),end="")
+                print(" No.%d "%(patient),end="")
+                #print("No. %d  "%(patient),end="")
 
 
