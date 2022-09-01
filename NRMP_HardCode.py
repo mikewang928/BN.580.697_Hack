@@ -105,7 +105,7 @@ def input_Hospital_preference_list(N):
 
 
 
-while all(Doctor_is_occupied_list) == False:
+while any(Doctor_is_occupied_list) == False:
     for i in range(num_doctor):
         if Doctor_is_occupied_list[i] == False:
             Doctor_Id = i+1
