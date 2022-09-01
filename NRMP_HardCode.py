@@ -119,17 +119,17 @@ Hospital_target_list = [[] for _ in range(num_Hospital)]
 
 
 
-# '''
-# Test 5
-# '''
-# num_doctor = 10
-# num_Hospital = 4
-# Hospital_cap = math.ceil(num_doctor/num_Hospital)
-# Doctor_Rank = [[1,2,3,4],[3,2,1,4],[4,1,3,2],[3,2,4,1],[3,1,4,2],[3,1,2,4],[4,3,2,1],[3,2,1,4],[2,1,3,4],[1,3,4,2]]
-# Hospital_Rank = [[1,2,3,4,5,6,7,8,9,10],[2,1,4,3,5,10,9,6,8,7],[6,2,1,3,5,4,7,10,9,8],[5,4,3,2,1,10,9,8,7,6]]
-# Doctor_is_occupied_list = [False]*num_doctor
+'''
+Test 8
+'''
+num_doctor = 10
+num_Hospital = 4
+Hospital_cap = math.ceil(num_doctor/num_Hospital)
+Doctor_Rank = [[1,2,3,4],[3,2,1,4],[4,1,3,2],[3,2,4,1],[3,1,4,2],[3,1,2,4],[4,3,2,1],[3,2,1,4],[2,1,3,4],[1,3,4,2]]
+Hospital_Rank = [[1,2,3,4,5,6,7,8,9,10],[2,1,4,3,5,10,9,6,8,7],[6,2,1,3,5,4,7,10,9,8],[5,4,3,2,1,10,9,8,7,6]]
+Doctor_is_occupied_list = [False]*num_doctor
 
-# Hospital_target_list = [[] for _ in range(num_Hospital)] 
+Hospital_target_list = [[] for _ in range(num_Hospital)] 
 '''
 input: 
     Doctor_Id: the doctor id of the new coming doctor 
@@ -160,18 +160,22 @@ def higher_ranker_check(Doctor_Id, Hospital_Id):
         replaceble_doctor_Id = None
         # finding the replaceble doctor's ID 
         for doctor_ID_in_hospital_list in Hospital_target_list[Hospital_Id -1 ]:
+            print('replaceble_doctor list: ')
+            print(replaceble_doctor_list)
             # if an exisiting doctor in the list ranks shorter than the new coming doctor, the existing doctor will be move to the replaceble list
             if Hospital_Rank[Hospital_Id -1 ].index(doctor_ID_in_hospital_list) > Hospital_Rank[Hospital_Id-1].index(Doctor_Id):
-                replaceble_doctor_Id = doctor_ID_in_hospital_list
+                #replaceble_doctor_Id = doctor_ID_in_hospital_list
                 # if the replacable_doctor_list is empty and the replaceble doctor's ID
                 if len(replaceble_doctor_list) == 0:
                     replaceble_doctor_Id = doctor_ID_in_hospital_list
                     replaceble_doctor_list.append(replaceble_doctor_Id)
+                    print('000000 we are in if')
                     print(replaceble_doctor_list)
                     print('replaceble_doctor_Id: ' + str(replaceble_doctor_Id))
                 else: 
                     # find the shortest ranking replaceble doctor
                     if Hospital_Rank[Hospital_Id -1 ].index(doctor_ID_in_hospital_list) > Hospital_Rank[Hospital_Id -1 ].index(replaceble_doctor_Id):
+                        print('000000 we are in else')
                         replaceble_doctor_Id = doctor_ID_in_hospital_list
                         replaceble_doctor_list[0] = replaceble_doctor_Id
                         print(replaceble_doctor_list)
