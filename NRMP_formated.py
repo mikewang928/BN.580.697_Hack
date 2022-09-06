@@ -39,7 +39,7 @@ output:
 '''
 # check if there's a higher ranked docter in the hospital target list 
 # Doctor Id and Hospital Id must start from 1 
-def higher_ranker_check(Doctor_Id, Hospital_Id, Hospital_target_list):
+def higher_ranker_check(Doctor_Id, Hospital_Id, Hospital_target_list, Hospital_Rank, Hospital_cap):
     # if the list is empty or have avalible space add the doctor in the target list 
     if len(Hospital_target_list[Hospital_Id -  1]) == 0 or len(Hospital_target_list[Hospital_Id -1 ]) < Hospital_cap:
         Hospital_target_list[Hospital_Id -1 ].append(Doctor_Id) 
@@ -90,18 +90,18 @@ output:
     1, Hopital_final_list: Hospital's final acceptance list
 '''
 
-def run(Doctor_is_occupied_list, num_doctor, Doctor_Rank, Hospital_target_list):
+def run(Doctor_is_occupied_list, num_doctor, Hospital_cap, Doctor_Rank, Hospital_target_list,Hospital_Rank):
     while all(Doctor_is_occupied_list) == False:
         for i in range(num_doctor):
             if Doctor_is_occupied_list[i] == False:
                 Doctor_Id = i+1
                 Doctor_Hospital_choice = Doctor_Rank[i][0]
-                status = higher_ranker_check(Doctor_Id, Doctor_Hospital_choice, Hospital_target_list)
+                status = higher_ranker_check(Doctor_Id, Doctor_Hospital_choice, Hospital_target_list,Hospital_Rank,Hospital_cap)
                 del Doctor_Rank[i][0] # remove it's perfernece once submitted
                 # if the submission is rejected by the hosipital and the doctor still has a perfernece, try the next perference hoispital
                 while status == -2 and len(Doctor_Rank[i]) !=0: 
                     Doctor_Hospital_choice = Doctor_Rank[i][0]
-                    status = higher_ranker_check(Doctor_Id, Doctor_Hospital_choice, Hospital_target_list)
+                    status = higher_ranker_check(Doctor_Id, Doctor_Hospital_choice, Hospital_target_list,Hospital_Rank,Hospital_cap)
                     del Doctor_Rank[i][0] #remove it's perfernece once submitted
                 if status == -2 and len(Doctor_Rank[i])==0:
                     Doctor_is_occupied_list[i] = None
@@ -132,7 +132,7 @@ Hospital_target_list = [[] for _ in range(num_Hospital)]
 
 
 # running the algrothim
-Hospital_confirmed_list = run(Doctor_is_occupied_list, num_doctor, Doctor_Rank, Hospital_target_list)
+Hospital_confirmed_list = run(Doctor_is_occupied_list, num_doctor, Hospital_cap, Doctor_Rank, Hospital_target_list,Hospital_Rank)
 
 
 
