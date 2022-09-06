@@ -84,7 +84,7 @@ What we need to find out is that, what is the `most satisfying` arrangement when
 
 ![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/images/6.png) <br><br>
 
-The problem is now a classic `minimum cost maximum flow` problem. The algorithm follows the below flowchart. It searches for the least-cost path in all the paths that still have left some flow capacities, and fills the path with maximum flow. The algorithms repeats itself until there is no more available path.<br><br>
+The problem is now a `minimum cost maximum flow` problem. The algorithm follows the below flowchart. It searches for the least-cost path in all the paths that still have left some flow capacities, and fills the path with maximum flow. The algorithms repeats itself until there is no more available path.<br><br>
 ![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/images/fc.png) <br><br>
 
 ### Doctors --> Hospitals
