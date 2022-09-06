@@ -1,5 +1,5 @@
 # BN.580.697_Hack
-# Supported matchings
+# Supported matchings & Assumptions
 We support the following assignment tasks that are common in the healthcare systems.<br>
 * Patients --> Doctors 
   * Each patient `needs` to visit a doctor.
