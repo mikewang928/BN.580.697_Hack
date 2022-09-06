@@ -61,6 +61,18 @@ Output
 
 # Why it works
 ### Patients --> Doctors
+As shown in the figure below, circles ○ representing patients, and triangles △ representing doctors.<br>
+The problem can be modeled into a bipartite graph, which means that vertices are separated into two sets and vertices in the same set has no connections between each other. <br>
+![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/images/1.png) <br>
+Patient No.1 has a level of preference towards doctor No.1, doctor No.2, and doctor No.3. This can be represented as three different edges pointing from patient No.1 to each doctor, as shown in the figure below. <br>
+![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/images/2.png) <br>
+
+Each patient has a level of preference towards each doctor. Now the problem can be represented as the figure below. <br>
+![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/images/3.png) <br>
+
+What we need to find out is that, 
+
+
 
 ### Doctors --> Hospitals
 
