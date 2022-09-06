@@ -55,7 +55,8 @@ This means the most satisfying assignment is:
 * Doctor No.3 takes in Patient No.3.
 ### Doctors --> Hospitals
 Input:
-* Please refer to the .ipynb document.
+* Please refer to the .ipynb document.<br>
+
 Output:
 * Please refer to the .ipynb document.
 
@@ -87,6 +88,7 @@ The problem is now a classic `minimum cost maximum flow` problem. The algorithm 
 ![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/images/fc.png) <br><br>
 
 ### Doctors --> Hospitals
+* Please refer to the .ipynb document.<br>
 
 References:<br>
 Ahuja, Ravindra K.; Magnanti, Thomas L.; Orlin, James B. (1993). Network Flows. Theory, Algorithms, and Applications. Prentice Hall.<br>
