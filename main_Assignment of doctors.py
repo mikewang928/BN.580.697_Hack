@@ -485,6 +485,8 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
         #define the restart function: reboot the program and set the default parameter
         self.textBrowser.append("The program is rebooting, pls wait...")
         self.default_parameter()
+        self.treeView.setModel(None)
+        self.graphicsView.setScene(None)
         self.textBrowser.setText("The program has restarted, pls input your parameters.")
     def slot_max_or_recv(self):
         #define the slot_max_or_recv function: set the window size biggest or normal
