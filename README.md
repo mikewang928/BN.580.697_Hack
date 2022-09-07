@@ -1,5 +1,5 @@
 # BN.580.697_Hack
-Within this Git repo, we (Siyu Wang, Rongxi Yi, ZiYang Xu) implemented the Hospital-Doctors matching problems both in the hospital don't have a perference case and the hopitals have prefernce cases. Each cases is solved by using MCMF and NRMP algorthims respectively. <br><br>
+Within this Github repo, we (Siyu Wang, Rongxi Yi, ZiYang Xu) implemented the Hospital-Doctors matching problems both in the hospital don't have a perference case (standard question) and the hopitals have prefernce cases (the challenge question). Each cases is solved by using MCMF and NRMP algorthims respectively. <br><br>
 To make a better user experience, an UI interface is implemented (Operation is manuel is explained in `Section I`). A detailed algorthim explaination is further summarized in the `min_cost_flow.ipynb` file and in Section II of the `readme.md` file. 
 
 
