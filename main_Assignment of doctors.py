@@ -192,14 +192,14 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
 
         self.tableWidget.setRowCount(N) #set the row of tableWidget
         self.tableWidget.setColumnCount(K) #set the column of tableWidget
-        self.tableWidget.setVerticalHeaderLabels('Patient %d' %(i+1) for i in range(N)) #set the vertical header of tableWidget
+        self.tableWidget.setVerticalHeaderLabels('Doctor %d' %(i+1) for i in range(N)) #set the vertical header of tableWidget
         self.tableWidget.horizontalHeader().setVisible(False)#set HorizontalHeader unvisible
         
         #show the patient information in textBrowser
         self.textBrowser.clear() #clear textBrowser
-        self.textBrowser.append('The Patient list is:')
+        self.textBrowser.append('The Doctor list is:')
         for i in range(N):
-            self.textBrowser.append('Patient %d' %(i+1))
+            self.textBrowser.append('Doctor %d' %(i+1))
         
         #set header width mode to stretch to fill the available space
         self.tableWidget.verticalHeader().setSectionResizeMode(QHeaderView.Stretch)
@@ -213,7 +213,7 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
         #set the tableWidget_2, as the input of doctor's capital
         self.tableWidget_2.setRowCount(1)
         self.tableWidget_2.setColumnCount(K)
-        self.tableWidget_2.setHorizontalHeaderLabels('Doctor %d' %(i+1) for i in range(K))
+        self.tableWidget_2.setHorizontalHeaderLabels('Hospital %d' %(i+1) for i in range(K))
         self.tableWidget_2.verticalHeader().setVisible(False)
         self.tableWidget_2.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.tableWidget_2.horizontalHeader().setFont(font)
@@ -287,7 +287,7 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
         outputTab=G.costFlow(s,t)
 
         #show the assignment in textBrowser
-        title="\nAssignments:\n    Doctor"+" "*8+"Patient(s)    "
+        title="\nAssignments:\n    Hospital"+" "*8+"Doctor(s)    "
         self.textBrowser.append(title)
         print(title)
         print("-"*(len(title)-len("\nAssignments:\n)")),end="")
@@ -298,7 +298,7 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
         
         #set doctor's name as key
         for key in range(K):
-            assignment_list['Doctor %d' %(key+1)] = []
+            assignment_list['Hospital %d' %(key+1)] = []
         #set patient's name as value
         for p,linkage in outputTab.items():
             if (p>N)&(p<N+K+1):
@@ -309,7 +309,7 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
                     print(" No.%d "%(patient),end="")
                     #self.textBrowser.append("No.%d"%(patient))
                     #print("No. %d  "%(patient),end="")
-                    assignment_list['Doctor %d' %(p-N)].append("Patient %d"%(patient))
+                    assignment_list['Hospital %d' %(p-N)].append("Doctor %d"%(patient))
         
         print(f'\nThe assignment of patients is {assignment_list}')
         
@@ -317,7 +317,7 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
         for key,Value in assignment_list.items():
             for i in range(len(Value)):
                 self.textBrowser.append(f'    {key}        {Value[i]}')
-        self.textBrowser.append(f'\nThe assignment of patients is {assignment_list}')
+        self.textBrowser.append(f'\nThe assignment of doctors is {assignment_list}')
         
         return assignment_list
                     
