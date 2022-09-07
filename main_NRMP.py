@@ -248,11 +248,11 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
         K=int(self.spinBox_2.value()) #get the number of Hospitals and turn into integer
         
         rank=self.input_patient_preference_list() #get patients' preferences list from input_patient_preference_list function
-        print(rank)
+        #print(rank)
         
         
         rank_H,Doctor_is_occupied_list,Hospital_target_list, Hospital_cap,= self.input_Hospital_preference_list()
-        print(rank_H)
+        #print(rank_H)
         
         # C=self.input_doctor_capital() #get doctors' capital from input_doctor_capital function
         # C=[int(ele) for ele in C]  #turn into integers
@@ -276,9 +276,9 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
         # s=0;t=N+K+1
         # outputTab=G.costFlow(s,t)
         
-        print(Doctor_is_occupied_list)
+        #print(Doctor_is_occupied_list)
         Hospital_confirmed_list = run(Doctor_is_occupied_list, N, Hospital_cap, rank, Hospital_target_list, rank_H)
-
+        print(Hospital_confirmed_list)
         # #show the assignment in textBrowser
         # title="\nAssignments:\n    Doctor"+" "*8+"Patient(s)    "
         # self.textBrowser.append(title)
