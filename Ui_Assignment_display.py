@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(-40, -50, 1051, 1011))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("e:\\JHU\\课程\\data design\\background.png"))
+        self.label.setPixmap(QtGui.QPixmap("./background.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)

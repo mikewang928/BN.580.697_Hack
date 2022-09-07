@@ -12,7 +12,7 @@ from PyQt5.QtGui import QMouseEvent,QFont
 from PyQt5.QtCore import Qt, QPoint
 import matplotlib.pyplot as plt
 import networkx as nx
-from NRMP_formated import run
+from NRMP_method import run
 import math
 
 
@@ -276,7 +276,7 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
         # s=0;t=N+K+1
         # outputTab=G.costFlow(s,t)
         
-        
+        print(Doctor_is_occupied_list)
         Hospital_confirmed_list = run(Doctor_is_occupied_list, N, Hospital_cap, rank, Hospital_target_list, rank_H)
 
         # #show the assignment in textBrowser

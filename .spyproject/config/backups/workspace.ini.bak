@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = empty-project-type
-recent_files = ['NRMP_HardCode.py', 'NRMP_formated.py', 'MCMF_handWritten.py', 'main_Assignment of doctors.py', 'main_NRMP.py', 'Ui_Assignment_display.py', 'C:\\Users\\wsycx\\anaconda3\\lib\\site-packages\\networkx\\classes\\graph.py']
+recent_files = ['NRMP_HardCode.py', 'NRMP_formated.py', 'main_Assignment of doctors.py', 'main_NRMP.py', 'Ui_Assignment_display.py', 'C:\\Users\\wsycx\\anaconda3\\lib\\site-packages\\networkx\\classes\\graph.py', 'NRMP_method.py']
 
 [main]
 version = 0.2.0
