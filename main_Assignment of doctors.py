@@ -325,9 +325,7 @@ class MainWindow(QMainWindow, Ui_Assignment_display.Ui_MainWindow):
         #define the drow_dot_graph function: drow the dot graph, and show the dot graph in textBrowser
 
         assignment_list= self.run_program() #get the assignment of patients from run_program function, assignment_list: dictionary, key is doctor, value is patient(s)
-        print('--------------------------')
         print(assignment_list) 
-        print('--------------------------')
         Assignment = {'Assignment List':[assignment_list]} #Assignment: dictionary, key is hospital, value is assignment_list as a dictionary
         print(Assignment)
     
