@@ -90,6 +90,68 @@ The problem is now a `minimum cost maximum flow` problem. The algorithm follows 
 ### Doctors --> Hospitals
 * Please refer to the .ipynb document.<br>
 
+# UI
+## UI interface
+![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/UI_input_output_Example/UI.png) <br><br>
+
+## Input
+* Number of Doctors in spinbox: an integer <br>
+* Number of Hospitals in spinbox: an integer <br>
+* Each doctor's perference in the chart: every row is a ranking of hospitals according doctor's perference, put an integer (smaller than the number of hospital) in each blank <br>
+* Hospital capacity: put an integer in the blank under each hospital <br>
+
+### Example
+    Number of doctors: 5 
+    Number of hospitals: 3 
+
+    doctor 1's preferences: 1 2 3 
+    doctor 2's preferences: 2 1 3 
+    doctor 3's preferences: 3 2 1 
+    doctor 4's preferences: 1 2 3 
+    doctor 5's preferences: 2 1 3 
+
+    hospital 1's capacity: 2 
+    hospital 2's capacity: 3 
+    hospital 3's capacity: 2 
+
+![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/UI_input_output_Example/Example_run_01.png) <br><br>
+
+## Action
+* run: click the `run` button, run the algorism and output the assignment in textBrower <br>
+* drow: click the `drow` button, get the treelist and graph in output window <br>
+
+## Output
+* Tree List: a list which can fold or unfold a class of assignment <br>
+* Dot Gragh: a gragh which includes nodes of hospitals/doctors, and edge indicating the assignment <br>
+
+### Example
+
+![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/UI_input_output_Example/Example_run_02.png) <br><br>
+
+## Output Action
+* Change node color: Three colors to change, `default`, `skyblue` or `red` <br>
+* Change output_to_local option: Two options to switch, `list` or `graph`<br>
+* Output to local: click the `output to local` button and input the filename and filelocation in dialog<br>
+
+### Example
+
+![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/UI_input_output_Example/Example_run_03.png) <br><br>
+
+## Window action
+
+* `Reboot`: reboot the program, put the mouse on the yellow button at top right corner of the window and you will see the hint<br>
+* `Minimize`: minimize the window, put the mouse on the gray button at top right corner of the window and you will see the hint<br>
+* `Maximize and Restore`: maximize the window and restore to a normal one when maximized, put the mouse on the green button at top right corner of the window and you will see the hint<br>
+* `Close`: close the window and end the program, put the mouse on the red button at top right corner of the window and you will see the hint<br>
+
+## Warning
+A window of `warning` will pop up if there is not parameter in the running process. <br>
+eg. you change a node color in output window but you haven't input any parameter or haven't run the algrorithm yet.<br>
+
+### Example
+![image](https://github.com/mikewang928/BN.580.697_Hack/blob/main/UI_input_output_Example/warning.png) <br><br>
+
+
 References:<br>
 Ahuja, Ravindra K.; Magnanti, Thomas L.; Orlin, James B. (1993). Network Flows. Theory, Algorithms, and Applications. Prentice Hall.<br>
 Moore, Edward F. (1959). "The shortest path through a maze". Proceedings of the International Symposium on the Theory of Switching. Harvard University Press. pp. 285–292.<br>
